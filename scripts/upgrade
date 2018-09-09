@@ -97,6 +97,14 @@ sudo rm -R "$tmpdir"
 # Copy configuration file
 cp ../conf/config.production.json "$final_path/config.production.json"
 
+#=================================================
+# INSTALL DEPENDENCIES
+#=================================================
+
+# install nodejs
+ynh_install_nodejs 8
+npm i -g ghost-cli
+
 # Install the dependencies with yarn
 (
 	cd "$final_path"

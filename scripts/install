@@ -76,6 +76,7 @@ ynh_app_setting_set $app port $port
 
 # install nodejs
 ynh_install_nodejs 8
+npm i -g ghost-cli
 
 # add yarn repo for Debian
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
@@ -101,10 +102,8 @@ ynh_mysql_setup_db $db_name $db_name
 
 ynh_app_setting_set $app final_path $final_path
 # Download, check integrity, uncompress and patch the source from app.src
-tmpdir="$(mktemp -d)"
-sudo wget -O "$tmpdir/ghost.zip" "https://ghost.org/zip/ghost-latest.zip"
-unzip "$tmpdir/ghost.zip" -d "$final_path"
-sudo rm -R "$tmpdir/ghost.zip"
+ynh_setup_source "$final_path"
+
 #=================================================
 # NGINX CONFIGURATION
 #=================================================
