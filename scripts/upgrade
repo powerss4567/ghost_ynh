@@ -103,12 +103,11 @@ cp ../conf/config.production.json "$final_path/config.production.json"
 
 # install nodejs
 ynh_install_nodejs 8
-npm i -g ghost-cli
 
 # Install the dependencies with yarn
 (
 	cd "$final_path"
-	yarn install 
+	yarn install --skip-integrity-check 
 	yarn global add knex-migrator
 
  
