@@ -107,7 +107,7 @@ ynh_install_nodejs 8
 # Install the dependencies with yarn
 (
 	cd "$final_path"
-	yarn install --skip-integrity-check 
+	yarn install 
 	yarn global add knex-migrator
 
  

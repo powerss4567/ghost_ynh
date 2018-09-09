@@ -132,7 +132,7 @@ cp ../conf/config.production.json "$final_path/config.production.json"
 # Install the dependencies with yarn
 (
 	cd "$final_path"
-	yarn install --skip-integrity-check
+	yarn install 
 	yarn global add knex-migrator
 
  
