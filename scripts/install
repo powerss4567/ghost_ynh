@@ -76,6 +76,7 @@ ynh_app_setting_set $app port $port
 
 # install nodejs
 ynh_install_nodejs 8
+npm i -g ghost-cli
 
 # add yarn repo for Debian
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
